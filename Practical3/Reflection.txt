@@ -1,0 +1,4 @@
+Here are my reflections about Practical3. I cannnot say that everything went on smoothly, but fortunately finally I successfully did it.
+    I think there were many things not easy but not challenging enough to make me crazy. To be honest, I spent several hours to figure out the exact steps of this practical. I encountered some difficulties but I was able to solve them. 
+    I also met many problems. For example, sometimes I could not correctly write the commands and sometimes I could not correctly type pathways. But finally, with the help of classmates and teachers, I think I have gained a deeper understanding into them.
+    All in all, I think the practical3 is really meaningful for me. And though I am not very good at coding right now, I believe that practice makes perfect and I have already felt the beauty of coding and I'm eager to proceed on.  
