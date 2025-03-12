@@ -15,7 +15,7 @@ Y=False
 for X in [True,False]:
     for Y in [True,False]:
         W=X and Y
-        print(f"X = {X}, Y = {Y}, W = {W}")
+        print("X =",X,"Y =",Y,"W =",W)
 #X = True, Y = True, W = True
 #X = True, Y = False, W = False
 #X = False, Y = True, W = False
