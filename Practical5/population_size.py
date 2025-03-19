@@ -9,11 +9,11 @@ print(china_provinces_sorted)
 import matplotlib.pyplot as plt
 labels1 ="England", "Wales", "Northern Ireland", "Scotland"#add labels
 sizes1 = [57.11,3.13,1.91,5.45]#add the sizes of different countries
-plt.pie(sizes1, labels=labels1)#draw a pie plot
+plt.pie(sizes1, labels=labels1, colors=["orchid", "thistle", "plum", "m", "purple"])#draw a pie plot
 plt.axis('equal')#define the plot to be round
 plt.show()#print the plot 
 labels2="Zhejiang", "Fujian", "Jiangxi", "Anhui", "Jiangsu"#add labels
 sizes2 = [65.77, 41.88, 45.28, 61.27, 85.15]#add the sizes of different provinces
-plt.pie(sizes2, labels=labels2)#draw a pie plot
+plt.pie(sizes2, labels=labels2, colors=["thistle", "plum", "orchid", "m", "purple"])#draw a pie plot
 plt.axis('equal')#define the plot to be round
 plt.show()#print the plot 
