@@ -1,0 +1,4 @@
+I think this task is very challenging for me, but meanwhile it is rewarding. 
+I met many difficulties in dealing with these circulations and in coding in a very logical way. I often met problems that when I ran the codes, the computer told me that something had went wrong. I tried again and again to make the final file.
+It certainly took a while to complete that, but I really learnt a lot. For example, the most important thing that I've learnt is the importance of logic in python. Without the logic, the program will go wrong.
+I would say the most enjoyable moment was when I click on "run", everything went on well, which meant I successfully understood the logic and have done a good job. 
