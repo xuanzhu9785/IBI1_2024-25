@@ -8,6 +8,13 @@ f=d+e #total 2
 print("bus:",c,"minutes")
 print("car:",f,"minutes")
 #bus:90minutes car:95minutes 
+is_bus_faster = c < f #compare c with f
+print("Is bus faster than car?", is_bus_faster) #print the result
+
+if is_bus_faster: #make a conclusion
+    print("Conclusion: Bus is faster")
+else:
+    print("Conclusion: Car is faster or equal")
 #bus is faster
 # 4.2
 X=True
