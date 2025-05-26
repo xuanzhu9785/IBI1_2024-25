@@ -1,0 +1,3 @@
+Question: Plot a boxplot of DALYs across countries in 1990.
+line 36-44
+The boxplot shows the spread of DALYs values across all countries in 1990, helping visualize the variation and detect outliers. This provides insight into which countries had unusually high or low disease burdens.
