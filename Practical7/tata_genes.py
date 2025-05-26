@@ -1,16 +1,32 @@
-import re #import necessary library
-input_file = 'Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa'
-output_file = 'tata_genes.fa'
-with open(input_file, 'r') as infile:
-    fasta_data = infile.read().split('>')[1:]
-    tata_sequence = re.compile(r'TATA[AT]A[AT]')
-with open(output_file, 'w') as output:
-    for line in fasta_data:
-        first_line, *sequence_lines = line.split('\n')
-        gene_name = first_line.lstrip(">").split()[0]
-        sequence = ''.join(sequence_lines).replace("\n", "") 
-        if gene_name[-1] == "A":
-            gene_name = gene_name.split("_mRNA")[0]
-            if tata_sequence.search(sequence): 
-                output.write(f'{gene_name}\n{sequence}\n')
-output.close()
+import re
+
+gene_dict = {}
+seq = ''
+current_gene = None
+
+with open('Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa', 'r') as input_file:
+    for line in input_file:
+        line = line.strip()
+        if re.search(r'^>',line):
+            if current_gene:
+                gene_dict[current_gene] = seq
+            match = re.search(r'gene:(\S+)', line)
+            if match:
+                current_gene = match.group(1)
+            else:
+                current_gene = line[1:].split()[0]  
+            seq = ''
+        else:
+            seq += line
+
+    if current_gene:
+        gene_dict[current_gene] = seq
+
+tata_genes = {}
+for gene, seq in gene_dict.items():
+    if gene and re.search(r'TATA[AT]A[AT]', seq):
+        tata_genes[gene] = seq
+
+with open('tata_genes.fa', 'w') as output_file:
+    for gene, seq in tata_genes.items():
+        output_file.write(f'>{gene}\n{seq}\n')
