@@ -3,18 +3,13 @@ from datetime import datetime
 
 class GOHandler(xml.sax.ContentHandler):
     def __init__(self):
-        self.current_tag = ''
+        self.current_el = ''
         self.namespace = ''
         self.term_id = ''
         self.name = ''
         self.is_a_count = 0
         self.in_term = False
-
-        self.max_terms = {
-            'molecular_function': ('', '', 0),
-            'biological_process': ('', '', 0),
-            'cellular_component': ('', '', 0),
-        }
+        self.max_terms = {'molecular_function': ('', '', 0), 'biological_process': ('', '', 0), 'cellular_component': ('', '', 0),}
 
     def startElement(self, tag, attributes):
         self.current_tag = tag
@@ -54,6 +49,7 @@ end_time = datetime.now()
 
 print("Results using SAX:\n")
 for ns, (term_id, name, count) in handler.max_terms.items():
-    print(f"{ns}: {term_id} ({name}) with {count} is_a references")
+    print(f"{ns}: {term_id} ({name}), is_a: {count}")
 
 print("\nSAX processing time:", end_time - start_time)
+#time: 0:00:04.284551. SAX is faster
