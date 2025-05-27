@@ -1,4 +1,4 @@
-import re
+import re #import library
 #input sequences
 human = "MLSRAVCGTSRQLAPVLGYLGSRQKHSLPDLPYDYGALEPHINAQIMQLHHSKHHAAYVNNLNVTEEKYQEALAKGDVTAQIALQPALKFNGGGHINHSIFWTNLSPNGGGEPKGELLEAIKRDFGSFDKFKEKLTAASVGVQGSGWGWLGFNKERGHLQIAACPNQDPLQGTTGLIPLLGIDVWEHAYYLQYKNVRPDYLKAIWNVINWENVTERYMACKK"
 mouse = "MLCRAACSTGRRLGPVAGAAGSRHKHSLPDLPYDYGALEPHINAQIMQLHHSKHHAAYVNNLNATEEKYHEALAKGDVTTQVALQPALKFNGGGHINHTIFWTNLSPKGGGEPKGELLEAIKRDFGSFEKFKEKLTAVSVGVQGSGWGWLGFNKEQGRLQIAACSNQDPLQGTTGLIPLLGIDVWEHAYYLQYKNVRPDYLKAIWNVINWENVTERYTACKK"
@@ -37,10 +37,10 @@ def align(seq1, seq2, matrix):
     percent_identity = (identity / len(seq1))*100
     return score, percent_identity
 
-pairs = [("Human vs Mouse", human, mouse),("Human vs Random", human, random),("Mouse vs Random", mouse, random),]
+pairs = [("Human vs Mouse", human, mouse),("Human vs Random", human, random),("Mouse vs Random", mouse, random),] #compare 3 pairs
 
 for name, seq1, seq2 in pairs:
     score, percent_identity = align(seq1, seq2, blosum62)
-    print(f"{name}:")
+    print(f"{name}:") #print the result
     print(f" Score: {score}")
     print(f" Percentage identity: {percent_identity:.2f}%\n")
