@@ -1,0 +1,19 @@
+Length = 222 amino acids
+Localization: Mitochondria
+
+Range = 58.1% ~ 100%
+
+result of alignment.py
+Human vs Mouse:
+  Alignment score: 1097
+  Percentage identity: 90.09%
+
+Human vs Random:
+  Alignment score: -188
+  Percentage identity: 4.95%
+
+Mouse vs Random:
+  Alignment score: -190
+  Percentage identity: 4.95%
+
+Huamn and mouse SODM sequences are mostly related.
