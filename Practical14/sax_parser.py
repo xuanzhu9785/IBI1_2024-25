@@ -1,6 +1,8 @@
 import xml.sax
 from datetime import datetime
 
+time1 = datetime.now()
+
 class GOHandler(xml.sax.ContentHandler):
     def __init__(self):
         self.current_el = ''
@@ -38,18 +40,16 @@ class GOHandler(xml.sax.ContentHandler):
 
         self.current_tag = ''
 
-start_time = datetime.now()
-
 parser = xml.sax.make_parser()
 handler = GOHandler()
 parser.setContentHandler(handler)
 parser.parse('go_obo.xml')
 
-end_time = datetime.now()
+time2 = datetime.now()
 
 print("Results using SAX:\n")
 for ns, (term_id, name, count) in handler.max_terms.items():
-    print(f"{ns}: {term_id} ({name}), is_a: {count}")
+    print(f"{ns}: {term_id} ({name}), is_a: {count}")#print the result
 
-print("\nSAX processing time:", end_time - start_time)
+print("\nSAX processing time:", time2 - time1)#print the time
 #time: 0:00:04.284551. SAX is faster
