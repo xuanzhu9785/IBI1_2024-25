@@ -1,7 +1,7 @@
 from xml.dom import minidom
 from datetime import datetime
 
-time1 = datetime.now()
+time1 = datetime.now()#the time at beginning
 
 doc = minidom.parse('go_obo.xml')
 terms = doc.getElementsByTagName('term')
@@ -18,10 +18,10 @@ for term in terms:
     if namespace in max_terms and is_a_count > max_terms[namespace][2]:
         max_terms[namespace] = (term_id, name, is_a_count)
 
-time2 = datetime.now()
+time2 = datetime.now()#the time at the end
 print("Results using DOM:\n")
 for namespace, (term_id, name, count) in max_terms.items():
-    print(f"{namespace}: {term_id} ({name}), is_a: {count}")
+    print(f"{namespace}: {term_id} ({name}), is_a: {count}")#print the result
 
 print("\nDOM processing time:", time2 - time1)
 
